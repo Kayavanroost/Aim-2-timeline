@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Aim 2 Reanalysis</title>
+<style>
+:root{--ink:#17212b;--muted:#66727d;--paper:#f7f8f5;--card:#fff;--line:#dfe4df;--accent:#385f56;--accent2:#dfe9e5;--warn:#8b643d}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--paper);color:var(--ink);line-height:1.55}
+.wrap{max-width:1050px;margin:auto;padding:44px 24px 80px}.eyebrow{text-transform:uppercase;letter-spacing:.12em;font-size:.76rem;font-weight:700;color:var(--accent)}
+h1{font-size:clamp(2.2rem,6vw,4.5rem);line-height:1.02;letter-spacing:-.045em;margin:.35rem 0 1rem;max-width:850px}h2{font-size:1.6rem;margin:2.5rem 0 .9rem}h3{margin:.1rem 0 .35rem;font-size:1.08rem}.lede{font-size:1.12rem;color:var(--muted);max-width:800px}
+.summary{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:28px 0}.stat,.card{background:var(--card);border:1px solid var(--line);border-radius:14px}.stat{padding:18px}.stat b{display:block;font-size:1.5rem}.stat span{color:var(--muted);font-size:.9rem}
+.callout{border-left:4px solid var(--accent);background:var(--accent2);padding:15px 18px;border-radius:0 12px 12px 0;margin:22px 0}.callout strong{display:block;margin-bottom:4px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.card{padding:18px}.card p{margin:.4rem 0;color:var(--muted)}
+.timeline{display:grid;gap:12px}.week{display:grid;grid-template-columns:70px 1fr 72px;gap:16px;align-items:start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}.wk{font-weight:800;color:var(--accent)}.hours{text-align:right;font-weight:700;color:var(--muted)}
+ul{margin:.5rem 0 0;padding-left:1.2rem}li{margin:.28rem 0}.checks{list-style:none;padding:0}.checks li{display:flex;gap:10px;align-items:flex-start}.checks input{margin-top:.35rem;accent-color:var(--accent)}
+.phase{display:inline-block;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;font-weight:700;color:var(--accent);background:var(--accent2);padding:4px 8px;border-radius:999px;margin-bottom:7px}
+.progress-shell{height:12px;background:#e5e9e5;border-radius:999px;overflow:hidden;margin:10px 0 5px}.progress-bar{height:100%;width:0;background:var(--accent);transition:.2s}.progress-label{font-size:.88rem;color:var(--muted)}
+footer{margin-top:48px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:.88rem}@media(max-width:720px){.summary,.grid{grid-template-columns:1fr}.week{grid-template-columns:54px 1fr}.hours{grid-column:2;text-align:left}.wrap{padding:28px 16px 60px}}
+</style>
+</head>
+<body><main class="wrap">
+<div class="eyebrow">Child marriage & teen childbearing · PSID</div>
+<h1>Aim 2 Reanalysis Workplan</h1>
+<p class="lede">A realistic 12-week plan for revising the analysis at approximately five hours per week, with the weighting strategy, analytic sample, confounder measurement, pregnancy-detection assumptions, and manuscript outputs rebuilt in a deliberate order.</p>
+<div class="summary"><div class="stat"><b>12 weeks</b><span>planned timeline</span></div><div class="stat"><b>~5 hrs/week</b><span>sustainable workload</span></div><div class="stat"><b>~60 hours</b><span>total estimated effort</span></div></div>
+
+<h2>Revision priorities</h2>
+<div class="grid">
+<div class="card"><h3>IPTW for confounding</h3><p>Replace regression adjustment as the primary confounding-control strategy with inverse probability of treatment weighting.</p></div>
+<div class="card"><h3>Selection weighting</h3><p>Use inverse probability weighting to address selection into / remaining in the analytic sample over time, not only confounding.</p></div>
+<div class="card"><h3>Reconsider restrictions</h3><p>Do not restrict to non-immigrants / US-raised participants, and systematically reassess whether other exclusions are necessary.</p></div>
+<div class="card"><h3>Pregnancy detection sensitivity</h3><p>Vary assumptions about time to pregnancy detection, including sensitivity analyses by birth cohort and sex.</p></div>
+<div class="card"><h3>Continuous confounders</h3><p>Use continuous measures where appropriate, including years of parental education rather than broad education categories.</p></div>
+<div class="card"><h3>Parental occupation</h3><p>Add parental occupation as a potential socioeconomic confounder and determine an appropriate harmonized coding strategy.</p></div>
+</div>
+
+<div class="callout"><strong>Analysis rule</strong>Finalize the revised estimands, eligibility criteria, confounder definitions, and weighting strategy before rebuilding the person-month datasets. This should reduce repeated re-coding later.</div>
+
+<h2>Progress</h2><div class="progress-shell"><div class="progress-bar" id="bar"></div></div><div class="progress-label" id="progress">0 of 12 weeks completed</div>
+
+<h2>12-week timeline</h2>
+<div class="timeline" id="timeline">
+
+<section class="week"><div class="wk">Week 1</div><div><span class="phase">Plan</span><h3>Lock down the revised analysis plan</h3><ul class="checks"><li><input type="checkbox"><span>Write a 1–2 page analysis specification.</span></li><li><input type="checkbox"><span>Define the estimand for each time-to-event analysis.</span></li><li><input type="checkbox"><span>Specify exposure, outcome, censoring, confounding, and selection processes.</span></li><li><input type="checkbox"><span>List every current sample restriction and decide which need to remain.</span></li><li><input type="checkbox"><span>Pre-specify IPTW, selection-weighting, stabilization, and truncation approach.</span></li></ul></div><div class="hours">5 hrs</div></section>
+
+<section class="week"><div class="wk">Week 2</div><div><span class="phase">Cohort</span><h3>Rebuild the analytic sample</h3><ul class="checks"><li><input type="checkbox"><span>Remove the non-immigrant / US-raised restriction.</span></li><li><input type="checkbox"><span>Reconsider all other exclusions one by one.</span></li><li><input type="checkbox"><span>Generate a sample-flow table with N after each exclusion.</span></li><li><input type="checkbox"><span>Compare old versus revised sample characteristics and event counts.</span></li></ul></div><div class="hours">5 hrs</div></section>
+
+<section class="week"><div class="wk">Week 3</div><div><span class="phase">Variables</span><h3>Rebuild confounders</h3><ul class="checks"><li><input type="checkbox"><span>Construct parental education in years.</span></li><li><input type="checkbox"><span>Identify and harmonize parental occupation measures.</span></li><li><input type="checkbox"><span>Check distributions, missingness, and implausible values.</span></li><li><input type="checkbox"><span>Update the confounder list / DAG specification.</span></li></ul></div><div class="hours">5 hrs</div></section>
+
+<section class="week"><div class="wk">Week 4</div><div><span class="phase">Weights</span><h3>Build selection / attrition weights</h3><ul class="checks"><li><input type="checkbox"><span>Define the selection process and relevant time points.</span></li><li><input type="checkbox"><span>Fit probability-of-selection / remaining-observed models.</span></li><li><input type="checkbox"><span>Generate stabilized inverse probability of selection weights.</span></li><li><input type="checkbox"><span>Inspect weight distributions and extreme values.</span></li></ul></div><div class="hours">5 hrs</div></section>
+
+<section class="week"><div class="wk">Week 5</div><div><span class="phase">Weights</span><h3>Build confounding IPTWs</h3><ul class="checks"><li><input type="checkbox"><span>Fit exposure models separately for the two causal questions.</span></li><li><input type="checkbox"><span>Generate stabilized IPTWs.</span></li><li><input type="checkbox"><span>Combine confounding and selection weights as appropriate.</span></li><li><input type="checkbox"><span>Implement pre-specified truncation strategy.</span></li></ul></div><div class="hours">5 hrs</div></section>
+
+<section class="week"><div class="wk">Week 6</div><div><span class="phase">Diagnostics</span><h3>Evaluate the weights</h3><ul class="checks"><li><input type="checkbox"><span>Assess positivity and exposure overlap.</span></li><li><input type="checkbox"><span>Calculate standardized mean differences before and after weighting.</span></li><li><input type="checkbox"><span>Calculate effective sample size.</span></li><li><input type="checkbox"><span>Revise propensity models if balance is inadequate.</span></li><li><input type="checkbox"><span>Save balance plots / diagnostics for the supplement.</span></li></ul></div><div class="hours">5 hrs</div></section>
+
+<section class="week"><div class="wk">Week 7</div><div><span class="phase">Primary analysis</span><h3>Run weighted survival analyses</h3><ul class="checks"><li><input type="checkbox"><span>Estimate pregnancy detection → child marriage association using the weighted model.</span></li><li><input type="checkbox"><span>Estimate child marriage → teen childbirth association using the weighted model.</span></li><li><input type="checkbox"><span>Check relevant survival-model assumptions.</span></li><li><input type="checkbox"><span>Compare new estimates with original crude and regression-adjusted results.</span></li></ul></div><div class="hours">5 hrs</div></section>
+
+<section class="week"><div class="wk">Week 8</div><div><span class="phase">Sensitivity</span><h3>Pregnancy-detection sensitivity analyses</h3><ul class="checks"><li><input type="checkbox"><span>Pre-specify plausible alternative time-to-detection assumptions.</span></li><li><input type="checkbox"><span>Rerun reproductive trajectory analyses under alternative assumptions.</span></li><li><input type="checkbox"><span>Rerun pregnancy detection → marriage analyses.</span></li><li><input type="checkbox"><span>Vary detection assumptions by birth cohort.</span></li><li><input type="checkbox"><span>Vary detection assumptions by sex.</span></li></ul></div><div class="hours">5 hrs</div></section>
+
+<section class="week"><div class="wk">Week 9</div><div><span class="phase">Robustness</span><h3>Run additional robustness analyses</h3><ul class="checks"><li><input type="checkbox"><span>Compare reasonable weight-truncation thresholds.</span></li><li><input type="checkbox"><span>Compare confounding-only IPTW with confounding + selection weighting.</span></li><li><input type="checkbox"><span>Retain regression-adjusted estimates as a secondary comparison.</span></li><li><input type="checkbox"><span>Investigate materially different or unexpected estimates.</span></li></ul></div><div class="hours">5 hrs</div></section>
+
+<section class="week"><div class="wk">Week 10</div><div><span class="phase">Outputs</span><h3>Regenerate tables and figures</h3><ul class="checks"><li><input type="checkbox"><span>Update sample characteristics table.</span></li><li><input type="checkbox"><span>Update reproductive trajectory figures.</span></li><li><input type="checkbox"><span>Replace adjusted-model tables with weighted effect estimates.</span></li><li><input type="checkbox"><span>Add balance / weight diagnostics and sensitivity-analysis outputs.</span></li><li><input type="checkbox"><span>Audit all analytic Ns across outputs.</span></li></ul></div><div class="hours">5 hrs</div></section>
+
+<section class="week"><div class="wk">Week 11</div><div><span class="phase">Writing</span><h3>Rewrite Methods and Results</h3><ul class="checks"><li><input type="checkbox"><span>Rewrite sample and eligibility criteria.</span></li><li><input type="checkbox"><span>Rewrite confounder measurement.</span></li><li><input type="checkbox"><span>Document IPTW and selection-weight construction and diagnostics.</span></li><li><input type="checkbox"><span>Rewrite primary and sensitivity-analysis results.</span></li><li><input type="checkbox"><span>Update all table and figure references.</span></li></ul></div><div class="hours">5 hrs</div></section>
+
+<section class="week"><div class="wk">Week 12</div><div><span class="phase">Finalize</span><h3>Discussion and final quality control</h3><ul class="checks"><li><input type="checkbox"><span>Revise discussion and interpretation based on weighted estimates.</span></li><li><input type="checkbox"><span>Update limitations on residual confounding, selection, and pregnancy-detection assumptions.</span></li><li><input type="checkbox"><span>Update abstract.</span></li><li><input type="checkbox"><span>Audit every number across abstract, text, tables, and figures.</span></li><li><input type="checkbox"><span>Clean and annotate final reproducible analysis code.</span></li></ul></div><div class="hours">5 hrs</div></section>
+</div>
+
+<h2>Key final outputs</h2><div class="card"><ul><li>Revised analytic cohort and sample-flow documentation</li><li>Confounding IPTWs and inverse probability of selection weights</li><li>Weight distribution, overlap, balance, and effective-sample-size diagnostics</li><li>Primary weighted survival estimates for both causal questions</li><li>Pregnancy-detection sensitivity analyses by cohort and sex</li><li>Comparison of crude, original regression-adjusted, IPTW, and IPTW + selection-weighted estimates</li><li>Updated tables, figures, supplement, Methods, Results, Discussion, and abstract</li></ul></div>
+<footer>Aim 2 reanalysis tracker · Progress is saved locally in your browser.</footer>
+</main>
+<script>
+const boxes=[...document.querySelectorAll('input[type="checkbox"]')];
+const key='aim2-reanalysis-checks-v1';
+const saved=JSON.parse(localStorage.getItem(key)||'[]');
+boxes.forEach((b,i)=>{b.checked=!!saved[i];b.addEventListener('change',save)});
+function save(){localStorage.setItem(key,JSON.stringify(boxes.map(b=>b.checked)));update()}
+function update(){const weeks=[...document.querySelectorAll('.week')];const done=weeks.filter(w=>[...w.querySelectorAll('input')].every(x=>x.checked)).length;document.getElementById('bar').style.width=(done/weeks.length*100)+'%';document.getElementById('progress').textContent=`${done} of ${weeks.length} weeks completed`;}
+update();
+</script></body></html>
